@@ -27,6 +27,29 @@ void write_image(Image const& image, std::string const& fname)
   //
   // where secs is the number of seconds it to write the file.
   //
+    
+    
+    
+    using namespace std;
+    
+    cout << "Writing to the file " << fname << '\n';
+    cout.flush();
+    
+    auto time_start = chrono::high_resolution_clock:now()
+    {
+        ofstream out(fname, ios::binary);
+        image.save(out, true);
+    }
+    
+    auto time_end = chrono::high_resolution_clock::now();
+    
+    // float type because we are calculating the time elasped
+    chrono::duration<float> secs = time_end - time_start;
+    
+    
+  cout  << "OFSTREAM_TIME: " << fname << " took " << secs.count()
+       << " seconds to write.\n";
+    
 }
 
 //===========================================================================
