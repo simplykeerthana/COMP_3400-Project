@@ -33,7 +33,7 @@
       if(binary == false)
       {
           
-          os << static_cast<std::size_t>(r) << '' << static_cast<std::size_t>(g) << '' << static_cast<std::size_t>(b);
+          os << static_cast<std::size_t>(r) << "" << static_cast<std::size_t>(g) << "" << static_cast<std::size_t>(b);
       }
       
     //
