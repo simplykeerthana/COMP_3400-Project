@@ -30,6 +30,7 @@ inline void write_cell_info_concurrently(
     //Provided standard error message.
     std::cerr << "PROCESSING: (" << xlow << ',' << ylow << ")-(" << xhigh << ',' << yhigh << ") on thread " << std::this_thread::get_id() << '\n';
   }
+}
 
 //===========================================================================
 
