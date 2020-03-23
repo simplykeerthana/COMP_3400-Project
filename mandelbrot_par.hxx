@@ -68,7 +68,7 @@ void draw_mandelbrot_set_par(
           {
               Real const y = image_index_to_real(j, height, maxMinPointDifference.imag(), min_point.imag());
               ;
-              complex<Real> const c(x, y);
+              std::complex<Real> const c(x, y);
               image(i, j) = m2c(compute_mandelbrot_at(c, max_iter), max_iter);
           }
       }
@@ -138,7 +138,7 @@ void draw_mandelbrot_set_par(
   std::chrono::duration<double> secs = end - start;
 
   //Output information to the user
-  std::cout << "MANDELBROT_TIME: " << width << " by " << height << " Mandelbrot set took " << secs.count() << " seconds.\n"
+    std::cout << "MANDELBROT_TIME: " << width << " by " << height << " Mandelbrot set took " << secs.count() << " seconds.\n";
 
   
 
