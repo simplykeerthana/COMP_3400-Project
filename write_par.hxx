@@ -3,18 +3,25 @@
 
 //===========================================================================
 
-#include <cstddef>                  // for std::size_t
-#include <mutex>                    // for std::mutex
-#include <thread>                   // for std::thread
-#include <iostream>                 // for std::cerr
+#include <cstddef>  // for std::size_t
+#include <mutex>    // for std::mutex
+#include <thread>   // for std::thread
+#include <iostream> // for std::cerr
 
 //===========================================================================
 
 inline void write_cell_info_concurrently(
-  size_t const& xlow, size_t const& ylow,
-  size_t const& xhigh, size_t const& yhigh
-)
+    size_t const &xlow, size_t const &ylow,
+    size_t const &xhigh, size_t const &yhigh)
 {
+
+  static std::mutex mychoosing;
+
+  {
+    std::lock_guard<std::mutex> lock(mychoosing);
+    std::cerr << "PROCESSING: (" << xlow << ',' << ylow << ")-(" << xhigh << ',' << yhigh << ") on thread " << std::this_thread::get_id() << '\n';
+  }
+
   //
   // TODO: You must write the code in this function as described below.
   //
@@ -29,7 +36,7 @@ inline void write_cell_info_concurrently(
   //         << "PROCESSING: (" << xlow << ',' << ylow
   //         << ")-(" << xhigh << ',' << yhigh << ") on thread "
   //         << this_thread::get_id() << '\n';
-  // 
+  //
   // and close the code block.
   //
   // NOTE: Look up std::mutex and std::lock_guard on cppreference.com.
