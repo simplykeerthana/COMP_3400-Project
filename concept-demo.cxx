@@ -1,4 +1,9 @@
 //===========================================================================
+//Noah Campbell (10453611)
+//Keerthana Madhavan (104995097)
+//Spencer Briguglio (103746720)
+//Jykee John Pavo (104891924)
+//Taqiuddin Farooqui (104073892)
 
 #include <concepts>           // new in C++20
 
@@ -11,8 +16,6 @@
 #include "mandelbrot_par.hxx"
 
 //===========================================================================
-
-//
 // Your code is expected to pass all of the concepts defined in this file
 // (which are static_assert()-checked in main() at the bottom of this file).
 //
