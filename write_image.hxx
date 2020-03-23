@@ -35,7 +35,7 @@ void write_image(Image const& image, std::string const& fname)
     cout << "Writing to the file " << fname << '\n';
     cout.flush();
     
-    auto time_start = chrono::high_resolution_clock:now()
+    auto time_start = chrono::high_resolution_clock:now();
     {
         ofstream out(fname, ios::binary);
         image.save(out, true);
